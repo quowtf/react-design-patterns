@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
 import {
+  StyleSheet,
   Text,
   View,
   TextInput,
   Dimensions,
   TouchableOpacity,
 } from 'react-native';
-import styles from '../Styling/AppStyling';
 
 const {width} = Dimensions.get('screen');
 interface PropsButton {
@@ -76,5 +76,34 @@ const container = () => {
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'flex-start',
+    backgroundColor: '#F5FCFF',
+  },
+  label: {
+    fontSize: 20,
+    alignItems: 'center',
+    textAlign: 'center',
+    margin: 10,
+  },
+  input: {
+    borderColor: 'gray',
+    borderWidth: 1,
+    width,
+    height: 45,
+  },
+  fancyButton: {
+    marginTop: 10,
+    backgroundColor: 'lightblue',
+    borderBottomRightRadius: 4,
+    width,
+    borderWidth: 1,
+    borderColor: 'gray',
+  },
+});
 
 export default container;

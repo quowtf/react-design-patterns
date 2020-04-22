@@ -1,8 +1,8 @@
 import React from 'react';
-import ContainerComponent from './Patterns/ContainerComponent/ContainerComponent';
+import AppContainer from './Navigation/RootNavigator';
 
 const App = () => {
-  return <ContainerComponent />;
+  return <AppContainer />;
 };
 
 export default App;

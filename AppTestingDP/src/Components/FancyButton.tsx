@@ -1,31 +1,18 @@
 import React from 'react';
-import {Text, TouchableOpacity} from 'react-native';
+import {Text, View} from 'react-native';
 import styles from './styles/AppStyles';
-import {PropsButton} from './interfaces/Props';
 
-export const FancyButton = (props: PropsButton) => {
+import {WithTextProps} from './interfaces/WithTextProps';
+import WithNavigation from './WithNavigation';
+import WithStyle from './WithStyle';
+import {WithStyleProps} from './interfaces/WithStyleProps';
+
+const button: React.FC<WithTextProps & WithStyleProps> = (props) => {
   return (
-    <TouchableOpacity
-      onPress={
-        props.route
-          ? () => {
-              console.log('go route');
-              console.log(props);
-              props.navigation.navigate(props.route);
-              // props.navigation.goBack();
-            }
-          : () => {
-              console.log('GO BACK');
-              console.log(props.route);
-              props.navigation.goBack();
-            }
-      }
-      style={
-        props.text === 'Log in'
-          ? [styles.fancyButton, styles.loginButton]
-          : styles.fancyButton
-      }>
+    <View style={props.setStyle}>
       <Text style={styles.label}>{props.text}</Text>
-    </TouchableOpacity>
+    </View>
   );
 };
+
+export const FancyButton: any = WithNavigation(WithStyle(button));

@@ -2,16 +2,14 @@ import React from 'react';
 import {View, Text} from 'react-native';
 import {FancyButton} from '../Components/FancyButton';
 import styles from '../Components/styles/AppStyles';
-import {PropsButton} from 'src/Components/interfaces/Props';
+import {WithNavigationProps} from '../Components/interfaces/WithNavigationProps';
 
-const HomeScreen: React.FC<PropsButton> = (props) => {
-  console.log('Detail screen props');
-  console.log(props);
+const HomeScreen: React.FC = (props: any) => {
   return (
     <View style={styles.container}>
       <Text>Detalles ultima screen, regresa!</Text>
 
-      <FancyButton text={'go back!'} navigation={props.navigation} />
+      <FancyButton text={'Go Back!'} navigation={props.navigation} />
     </View>
   );
 };

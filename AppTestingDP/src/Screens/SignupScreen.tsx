@@ -18,7 +18,7 @@ const HomeScreen = (props: PropsButton) => {
       <FancyInput item={'email'} value={email} setItem={setEmail} />
 
       <FancyButton
-        text={'Sign Up'}
+        text={'Sign up'}
         route={'SignUp'}
         navigation={props.navigation}
       />
